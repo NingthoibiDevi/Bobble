@@ -35,71 +35,74 @@
 
 #PartC <br/>
 #Question 1: <br/>
-import nltk <br/>
-from nltk.corpus import stopwords <br/>
-from nltk.tokenize import word_tokenize <br/>
-from nltk.stem import PorterStemmer  <br/>
-from nltk.tokenize import word_tokenize <br/>
-nltk.download('stopwords') <br/>
-nltk.download('punkt') <br/>
+```
+import nltk 
+from nltk.corpus import stopwords 
+from nltk.tokenize import word_tokenize 
+from nltk.stem import PorterStemmer  
+from nltk.tokenize import word_tokenize 
+nltk.download('stopwords') 
+nltk.download('punkt') 
 
 
-a="Steve was born in Tokyo, Japan in 1950. He moved to London with his parents when hewas 5 years old. Steve started school there and his father began work at the hospital. His mother was a house wife and he had four brothers.He lived in England for 2 years then moved to Amman, Jordan where he lived there for 10 years. Steve then moved to Cyprus to study at the Mediterranean University.Unfortunately, he did not succeed and returned to Jordan. His parents were very unhappy so he decided to try in America.He applied to many colleges and universities in the States and finally got some acceptance offers from them. He chose Wichita State University in Kansas. His major was Bio-medical Engineering. He stayed there for bout six months and then he moved again to a very small town called Greensboro to study in a small college. " <br/>
-b=a.lower() <br/>
-print(b) <br/>
+a="Steve was born in Tokyo, Japan in 1950. He moved to London with his parents when hewas 5 years old. Steve started school there and his father began work at the hospital. His mother was a house wife and he had four brothers.He lived in England for 2 years then moved to Amman, Jordan where he lived there for 10 years. Steve then moved to Cyprus to study at the Mediterranean University.Unfortunately, he did not succeed and returned to Jordan. His parents were very unhappy so he decided to try in America.He applied to many colleges and universities in the States and finally got some acceptance offers from them. He chose Wichita State University in Kansas. His major was Bio-medical Engineering. He stayed there for bout six months and then he moved again to a very small town called Greensboro to study in a small college. " 
+b=a.lower() 
+print(b) 
  
-c = "" <br/>
-p = '''!()-[]{};:'"\,<>./?@#$%^&*_~''' <br/>
-for i in a: <br/>
-   if i not in p: <br/>
-       c=c+i <br/>
-print(c)<br/>
+c = "" 
+p = '''!()-[]{};:'"\,<>./?@#$%^&*_~''' 
+for i in a: 
+   if i not in p: 
+       c=c+i 
+print(c)
 
-def remove(a): <br/> 
-    return a.replace(" ", "") <br/>
-print(remove(a)) <br/>
-sw = set(stopwords.words('english')) <br/> 
+def remove(a):  
+    return a.replace(" ", "") 
+print(remove(a)) 
+sw = set(stopwords.words('english')) 
   
-word_tokens = word_tokenize(a) <br/>
+word_tokens = word_tokenize(a) 
   
-filtered_sentence = [w for w in word_tokens if not w in sw] <br/>
+filtered_sentence = [w for w in word_tokens if not w in sw] 
   
-filtered_sentence = [] <br/>
+filtered_sentence = [] 
   
-for w in word_tokens: <br/>
-    if w not in sw: <br/>
-        filtered_sentence.append(w) <br/>
+for w in word_tokens: 
+    if w not in sw: 
+        filtered_sentence.append(w) 
   
-print(word_tokens) <br/>
-print(filtered_sentence) <br/>
-ps=PorterStemmer() <br/>
-f= a.split() <br/>
-for j in f: <br/>
-    print(w, " : ", ps.stem(w)) <br/>
+print(word_tokens) 
+print(filtered_sentence) 
+ps=PorterStemmer() 
+f= a.split() 
+for j in f: 
+    print(w, " : ", ps.stem(w)) 
+```
 
 #Question 3 <br/>
-
-def setZeroes(matrix): <br/>
-        is_col = False <br/>
-        R = len(matrix) <br/>
-        C = len(matrix[0]) <br/>
-        for i in range(R): <br/>
-            if matrix[i][0] == 0: <br/>
-                is_col = True <br/>
-            for j in range(1, C): <br/>
-                if matrix[i][j]  == 0: <br/>
-                    matrix[0][j] = 0 <br/>
-                    matrix[i][0] = 0 <br/>
-        for i in range(1, R): <br/>
-            for j in range(1, C): <br/>
-                if not matrix[i][0] or not matrix[0][j]: <br/>
-                    matrix[i][j] = 0 <br/>
-        if matrix[0][0] == 0: <br/>
-            for j in range(C): <br/>
-                matrix[0][j] = 0 <br/>
-        if is_col: <br/>
-            for i in range(R): <br/>
-                matrix[i][0] = 0 <br/>
-        print(matrix) <br/>
-matrix = [[1,1,1,1],[1,0,1,1],[1,1,0,0],[0,0,0,1]] <br/>
-setZeroes(matrix) <br/>
+```
+def setZeroes(matrix): 
+        is_col = False 
+        R = len(matrix) 
+        C = len(matrix[0]) 
+        for i in range(R): 
+            if matrix[i][0] == 0: 
+                is_col = True 
+            for j in range(1, C): 
+                if matrix[i][j]  == 0: 
+                    matrix[0][j] = 0 
+                    matrix[i][0] = 0 
+        for i in range(1, R): 
+            for j in range(1, C): 
+                if not matrix[i][0] or not matrix[0][j]: 
+                    matrix[i][j] = 0 
+        if matrix[0][0] == 0: 
+            for j in range(C):
+                matrix[0][j] = 0 
+        if is_col: 
+            for i in range(R): 
+                matrix[i][0] = 0 
+        print(matrix) 
+matrix = [[1,1,1,1],[1,0,1,1],[1,1,0,0],[0,0,0,1]] 
+setZeroes(matrix) 
+```
