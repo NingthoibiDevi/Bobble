@@ -55,29 +55,30 @@ for i in a: <br/>
        c=c+i <br/>
 print(c)<br/>
 
-def remove(a):  
-    return a.replace(" ", "") 
-print(remove(a)) 
-sw = set(stopwords.words('english')) 
+def remove(a): <br/> 
+    return a.replace(" ", "") <br/>
+print(remove(a)) <br/>
+sw = set(stopwords.words('english')) <br/> 
   
-word_tokens = word_tokenize(a) 
+word_tokens = word_tokenize(a) <br/>
   
-filtered_sentence = [w for w in word_tokens if not w in sw] 
+filtered_sentence = [w for w in word_tokens if not w in sw] <br/>
   
-filtered_sentence = [] 
+filtered_sentence = [] <br/>
   
-for w in word_tokens: 
-    if w not in sw:
-        filtered_sentence.append(w) 
+for w in word_tokens: <br/>
+    if w not in sw: <br/>
+        filtered_sentence.append(w) <br/>
   
-print(word_tokens) 
-print(filtered_sentence)
-ps=PorterStemmer()
-f= a.split()
-for j in f: 
-    print(w, " : ", ps.stem(w))
+print(word_tokens) <br/>
+print(filtered_sentence) <br/>
+ps=PorterStemmer() <br/>
+f= a.split() <br/>
+for j in f: <br/>
+    print(w, " : ", ps.stem(w)) <br/>
 
 #Question 3 <br/>
+
 def setZeroes(matrix): <br/>
         is_col = False <br/>
         R = len(matrix) <br/>
