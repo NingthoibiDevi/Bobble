@@ -77,31 +77,28 @@ f= a.split()
 for j in f: 
     print(w, " : ", ps.stem(w))
 
-#Question 3
-def setZeroes(matrix):
-        is_col = False
-        R = len(matrix)
-        C = len(matrix[0])
-        for i in range(R):
-            if matrix[i][0] == 0:
-                is_col = True
-            for j in range(1, C):
-                if matrix[i][j]  == 0:
-                    matrix[0][j] = 0
-                    matrix[i][0] = 0
-
-        for i in range(1, R):
-            for j in range(1, C):
-                if not matrix[i][0] or not matrix[0][j]:
-                    matrix[i][j] = 0
-
-
-        if matrix[0][0] == 0:
-            for j in range(C):
-                matrix[0][j] = 0
-        if is_col:
-            for i in range(R):
-                matrix[i][0] = 0
-        print(matrix)
-matrix = [[1,1,1,1],[1,0,1,1],[1,1,0,0],[0,0,0,1]]
-setZeroes(matrix)
+#Question 3 <br/>
+def setZeroes(matrix): <br/>
+        is_col = False <br/>
+        R = len(matrix) <br/>
+        C = len(matrix[0]) <br/>
+        for i in range(R): <br/>
+            if matrix[i][0] == 0: <br/>
+                is_col = True <br/>
+            for j in range(1, C): <br/>
+                if matrix[i][j]  == 0: <br/>
+                    matrix[0][j] = 0 <br/>
+                    matrix[i][0] = 0 <br/>
+        for i in range(1, R): <br/>
+            for j in range(1, C): <br/>
+                if not matrix[i][0] or not matrix[0][j]: <br/>
+                    matrix[i][j] = 0 <br/>
+        if matrix[0][0] == 0: <br/>
+            for j in range(C): <br/>
+                matrix[0][j] = 0 <br/>
+        if is_col: <br/>
+            for i in range(R): <br/>
+                matrix[i][0] = 0 <br/>
+        print(matrix) <br/>
+matrix = [[1,1,1,1],[1,0,1,1],[1,1,0,0],[0,0,0,1]] <br/>
+setZeroes(matrix) <br/>
